@@ -79,6 +79,15 @@
   .edu-school { font-size: 13px; color: var(--ink-2); margin-bottom: 3px; }
   .edu-detail { font-size: 12px; color: var(--ink-3); font-style: italic; }
   .edu-year { font-family: var(--mono); font-size: 11px; padding: 3px 8px; background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; color: var(--ink-3); white-space: nowrap; }
+  .cert-list { display: flex; flex-direction: column; gap: 10px; }
+  .cert-card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; text-decoration: none; color: inherit; transition: border-color 0.15s; }
+  .cert-card:hover { border-color: var(--teal-mid); }
+  .cert-left { display: flex; align-items: center; gap: 12px; }
+  .cert-icon { width: 32px; height: 32px; border-radius: 6px; background: var(--teal-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cert-icon svg { width: 16px; height: 16px; color: var(--teal); }
+  .cert-name { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .cert-org { font-size: 12px; color: var(--ink-3); }
+  .cert-date { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); white-space: nowrap; }
   .contact-row { display: flex; flex-wrap: wrap; gap: 10px; }
   .contact-item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 16px; text-decoration: none; }
   .contact-item svg { color: var(--teal); flex-shrink: 0; }
@@ -143,15 +152,22 @@
         </div>
       </div>
       <div class="skill-card">
+        <div class="skill-name">NLP and ML</div>
+        <div class="skill-tags">
+          <span class="tag blue">FinBERT</span><span class="tag blue">Transformers</span>
+          <span class="tag">PyTorch</span><span class="tag">Random Forest</span>
+        </div>
+      </div>
+      <div class="skill-card">
         <div class="skill-name">Visualisation</div>
         <div class="skill-tags">
           <span class="tag teal">Tableau</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Statistics and ML</div>
+        <div class="skill-name">Statistics</div>
         <div class="skill-tags">
-          <span class="tag blue">A/B testing</span><span class="tag blue">Random Forest</span>
+          <span class="tag blue">A/B testing</span><span class="tag blue">Bonferroni correction</span>
           <span class="tag">Regression</span><span class="tag">Cohort analysis</span>
         </div>
       </div>
@@ -192,6 +208,28 @@
             <span class="project-badge">Factor model</span>
             <span class="project-badge">Backtesting</span>
             <span class="project-badge">Sharpe ratio</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/sentiment-alpha-signal" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Sentiment Alpha Signal: FinBERT vs Dictionary Methods</div>
+          <div class="project-desc">
+            Compared a transformer-based sentiment model (FinBERT) against a Loughran-McDonald finance
+            dictionary on 3,164 news headlines across 15 stocks. FinBERT found a statistically significant
+            correlation with next-day returns that survives Bonferroni correction, but a placebo
+            falsification test showed the same signal correlates almost equally with past returns,
+            an honest, ambiguous result that could reflect either reactive news coverage or a genuine
+            contrarian signal. Built with proper multiple-comparisons correction throughout.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">FinBERT</span>
+            <span class="project-badge">NLP</span>
+            <span class="project-badge">Hypothesis testing</span>
+            <span class="project-badge">Bonferroni correction</span>
+            <span class="project-badge">Python</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
@@ -299,6 +337,36 @@
         </div>
         <span class="edu-year">2009 to 2014</span>
       </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">certifications</div>
+    <div class="cert-list">
+      <a class="cert-card" href="https://coursera.org/verify/NJQ0I07FD05O" target="_blank" rel="noopener">
+        <div class="cert-left">
+          <div class="cert-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Fundamentals of Quantitative Modeling</div>
+            <div class="cert-org">Wharton School, University of Pennsylvania</div>
+          </div>
+        </div>
+        <span class="cert-date">June 2025</span>
+      </a>
+      <a class="cert-card" href="https://coursera.org/verify/1Y9EC8NS1QWV" target="_blank" rel="noopener">
+        <div class="cert-left">
+          <div class="cert-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Introduction to Spreadsheets and Models</div>
+            <div class="cert-org">Wharton School, University of Pennsylvania</div>
+          </div>
+        </div>
+        <span class="cert-date">June 2025</span>
+      </a>
     </div>
   </div>
 
