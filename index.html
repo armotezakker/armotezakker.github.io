@@ -155,7 +155,7 @@
         <div class="skill-name">NLP and ML</div>
         <div class="skill-tags">
           <span class="tag blue">FinBERT</span><span class="tag blue">Transformers</span>
-          <span class="tag">PyTorch</span><span class="tag">Random Forest</span>
+          <span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">PyTorch</span>
         </div>
       </div>
       <div class="skill-card">
@@ -167,7 +167,7 @@
       <div class="skill-card">
         <div class="skill-name">Statistics</div>
         <div class="skill-tags">
-          <span class="tag blue">A/B testing</span><span class="tag blue">Bonferroni correction</span>
+          <span class="tag blue">A/B testing</span><span class="tag blue">Survival analysis</span>
           <span class="tag">Regression</span><span class="tag">Cohort analysis</span>
         </div>
       </div>
@@ -196,11 +196,10 @@
         <div>
           <div class="project-name">Equity Factor Model: S&amp;P 500 Multi-Factor Strategy</div>
           <div class="project-desc">
-            Built a walk-forward quantitative strategy on S&amp;P 500 stocks using momentum, low volatility,
-            and value signals. Backtested 2019 to 2024 with quarterly rebalancing, no lookahead bias, and
-            transaction costs at 0.1% per trade. Combined portfolio returned +21.8% CAGR vs +17.2% for SPY.
-            Factor attribution showed momentum dominated this cycle at +39.7% CAGR standalone — an honest
-            but uncomfortable finding about multi-factor diversification.
+            Walk-forward quantitative strategy on S&amp;P 500 stocks using momentum, low volatility,
+            and value signals. Backtested 2019 to 2024 with quarterly rebalancing, no lookahead bias,
+            and transaction costs at 0.1% per trade. Combined portfolio returned +21.8% CAGR vs +17.2%
+            for SPY. Factor attribution showed momentum dominated this cycle at +39.7% CAGR standalone.
           </div>
           <div class="project-stack">
             <span class="project-badge">Python</span>
@@ -217,18 +216,39 @@
         <div>
           <div class="project-name">Sentiment Alpha Signal: FinBERT vs Dictionary Methods</div>
           <div class="project-desc">
-            Compared a transformer-based sentiment model (FinBERT) against a Loughran-McDonald finance
-            dictionary on 3,164 news headlines across 15 stocks. FinBERT found a statistically significant
-            correlation with next-day returns that survives Bonferroni correction, but a placebo
-            falsification test showed the same signal correlates almost equally with past returns,
-            an honest, ambiguous result that could reflect either reactive news coverage or a genuine
-            contrarian signal. Built with proper multiple-comparisons correction throughout.
+            Compared FinBERT against a Loughran-McDonald finance dictionary on 3,164 news headlines
+            across 15 stocks. FinBERT produced a statistically significant correlation with next-day
+            returns surviving Bonferroni correction, but a placebo falsification test revealed the
+            signal correlates almost equally with past returns. An honest ambiguous result that
+            distinguishes reactive news coverage from genuine predictive power.
           </div>
           <div class="project-stack">
             <span class="project-badge">FinBERT</span>
             <span class="project-badge">NLP</span>
             <span class="project-badge">Hypothesis testing</span>
             <span class="project-badge">Bonferroni correction</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/customer-churn-analytics" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Customer Churn and Revenue Analytics</div>
+          <div class="project-desc">
+            End-to-end churn analysis on 7,043 telecom customers. SQL cohort analysis in DuckDB
+            identified $45,034/month MRR at risk in high-churn customer segments. Kaplan-Meier
+            survival analysis showed month-to-month customers have a median survival of 35 months
+            vs never reaching 50% churn on annual contracts. XGBoost classifier reached AUC-ROC
+            0.84, with SHAP confirming contract type and tenure as the top two churn drivers
+            matching the SQL findings independently.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">DuckDB SQL</span>
+            <span class="project-badge">Survival analysis</span>
+            <span class="project-badge">XGBoost</span>
+            <span class="project-badge">SHAP</span>
             <span class="project-badge">Python</span>
           </div>
         </div>
