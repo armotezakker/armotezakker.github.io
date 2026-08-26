@@ -103,11 +103,13 @@
     </div>
     <div>
       <h1 class="name">Ahmad Reza Motezakker, PhD</h1>
-      <div class="title-tag">Data Analyst · Computational Scientist · KTH Stockholm</div>
+      <div class="title-tag">Data Analyst · Quantitative Risk · KTH Stockholm</div>
       <p class="bio">
-        I turn complex scientific and engineering datasets into clear insights. My background spans
-        molecular dynamics, thermal physics, and machine learning. I build data pipelines,
-        predictive models, and dashboards that connect research to real decisions.
+        I turn complex data into decisions that hold up under scrutiny. My background began in
+        molecular dynamics and thermal physics research at KTH, and has since grown into
+        quantitative finance and credit risk: portfolio and derivatives models, a
+        probability-of-default model validated against 1.35 million real loan outcomes, and a
+        production-grade serving layer with monitoring and explainability, not just a notebook.
       </p>
       <div class="links">
         <a href="mailto:armot@kth.se" class="link-btn">
@@ -183,6 +185,13 @@
         <div class="skill-tags">
           <span class="tag blue">PD scoring</span><span class="tag blue">IFRS9 / ECL</span>
           <span class="tag">Gini / KS / PSI</span><span class="tag">Calibration</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">ML Engineering and Deployment</div>
+        <div class="skill-tags">
+          <span class="tag blue">FastAPI</span><span class="tag blue">Docker</span>
+          <span class="tag">MLflow</span><span class="tag">SHAP + LLM explainability</span>
         </div>
       </div>
       <div class="skill-card">
@@ -269,6 +278,29 @@
             <span class="project-badge">Model Validation</span>
             <span class="project-badge">IFRS9</span>
             <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/credit-risk-serving-api" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Credit Risk Serving API: From Model to Production</div>
+          <div class="project-desc">
+            A live FastAPI service wrapping the PD model and IFRS9 logic from credit-scoring-ifrs9,
+            with SHAP-based explainability narrated by a local LLM, population stability monitoring
+            for drift detection, and full MLflow experiment tracking. Found and fixed a real LLM
+            reliability issue where the model stated an incorrect risk direction despite explicit
+            instructions, resolved by moving all factual claims into deterministic code and
+            restricting the LLM to narration only. Containerized with Docker and verified end to
+            end, including a real Docker networking bug found and fixed along the way.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">FastAPI</span>
+            <span class="project-badge">Docker</span>
+            <span class="project-badge">MLflow</span>
+            <span class="project-badge">SHAP</span>
+            <span class="project-badge">LLM Explainability</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
