@@ -194,7 +194,21 @@
           <span class="tag">MLflow</span><span class="tag">SHAP + LLM explainability</span>
         </div>
       </div>
+            <div class="skill-card">
+        <div class="skill-name">Systematic Trading Research</div>
+        <div class="skill-tags">
+          <span class="tag blue">Backtesting</span><span class="tag blue">Signal Research</span>
+          <span class="tag">Block Bootstrap</span><span class="tag">Statistical Validation</span>
+        </div>
+      </div>
       <div class="skill-card">
+        <div class="skill-name">Cloud Data Warehousing</div>
+        <div class="skill-tags">
+          <span class="tag blue">BigQuery</span><span class="tag blue">DuckDB</span>
+          <span class="tag">Cost-Aware SQL</span>
+        </div>
+      </div>
+<div class="skill-card">
         <div class="skill-name">Simulation</div>
         <div class="skill-tags">
           <span class="tag">LAMMPS</span><span class="tag">COMSOL</span><span class="tag">ANSYS Fluent</span>
@@ -301,6 +315,48 @@
             <span class="project-badge">MLflow</span>
             <span class="project-badge">SHAP</span>
             <span class="project-badge">LLM Explainability</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/systematic-strategy-research" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Systematic Strategy Research: Momentum, Reversal, and Honest Backtesting</div>
+          <div class="project-desc">
+            Tested well-documented momentum and short-term reversal signals on 15 years of real data
+            across 30 large-cap US stocks, with proven look-ahead prevention and realistic transaction
+            costs. Found and fixed two real methodological errors in the statistical significance
+            testing itself, including a turnover confound that made a losing strategy look highly
+            significant, resolved with a block bootstrap verified against a real turnover diagnostic.
+            Final honest result: neither signal shows significant edge net of costs, a credible finding
+            for well-known signals in a liquid, efficient market.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">Backtesting</span>
+            <span class="project-badge">Signal Research</span>
+            <span class="project-badge">Block Bootstrap</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/bigquery-loan-analytics" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">BigQuery Loan Analytics: Cloud Data Warehousing and Cost Optimization</div>
+          <div class="project-desc">
+            Loaded 1.35 million real loan records into Google BigQuery with an explicit schema, then
+            built cost-aware queries using BigQuery's dry-run cost estimation, cutting bytes scanned by
+            83.4 percent through column selection. Discovered BigQuery's query optimizer applies
+            projection pushdown through CTEs along the way, then built an honest, correctly interpreted
+            comparison against DuckDB for local, in-process queries on the same data.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">BigQuery</span>
+            <span class="project-badge">DuckDB</span>
+            <span class="project-badge">SQL</span>
+            <span class="project-badge">Cost Optimization</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
