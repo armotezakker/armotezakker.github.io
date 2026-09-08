@@ -174,6 +174,13 @@
         </div>
       </div>
       <div class="skill-card">
+        <div class="skill-name">Time Series and Anomaly Detection</div>
+        <div class="skill-tags">
+          <span class="tag blue">STL/MSTL decomposition</span><span class="tag blue">Seasonality</span>
+          <span class="tag">Robust scale estimation</span><span class="tag">Ablation testing</span>
+        </div>
+      </div>
+      <div class="skill-card">
         <div class="skill-name">Quantitative Finance</div>
         <div class="skill-tags">
           <span class="tag teal">Markowitz optimization</span><span class="tag teal">Black-Scholes</span>
@@ -306,6 +313,32 @@
             <span class="project-badge">ESG risk</span>
             <span class="project-badge">Climate stress testing</span>
             <span class="project-badge">Regression with fixed effects</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/seasonal-anomaly-detection" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Seasonal Anomaly Detection: An Honest Ablation on Real Benchmark Data</div>
+          <div class="project-desc">
+            Tested whether seasonal decomposition fixes a naive anomaly detector on the Numenta Anomaly
+            Benchmark, six real time series chosen after actually plotting their seasonality rather than
+            assuming it. A static threshold fails two opposite ways: it over-alerts on normal daily peaks,
+            or the seasonal swing itself corrupts its scale estimate until it stops firing entirely.
+            Diagnosed three separate causes behind why a first seasonal fix made every series worse, then
+            tested two candidate fixes (a weekly seasonal component, a robust local scale) as separate
+            ablations rather than bundled together. One fix genuinely worked, taking a broken detector from
+            catching 1 of 5 real anomalies to 5 of 5. The other backfired for a measured, specific reason on
+            every series tested. On 4 of 6 series, nothing beat the original naive detector, reported
+            plainly rather than hidden.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">STL/MSTL decomposition</span>
+            <span class="project-badge">Anomaly detection</span>
+            <span class="project-badge">Time series</span>
+            <span class="project-badge">Robust statistics</span>
             <span class="project-badge">Python</span>
           </div>
         </div>
