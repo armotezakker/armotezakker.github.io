@@ -196,6 +196,13 @@
         </div>
       </div>
       <div class="skill-card">
+        <div class="skill-name">Underwriting Policy and Selection Bias</div>
+        <div class="skill-tags">
+          <span class="tag blue">Approval threshold simulation</span><span class="tag blue">Reject inference</span>
+          <span class="tag">Profit/loss tradeoff</span><span class="tag">Probability calibration</span>
+        </div>
+      </div>
+      <div class="skill-card">
         <div class="skill-name">ML Engineering and Deployment</div>
         <div class="skill-tags">
           <span class="tag blue">FastAPI</span><span class="tag blue">Docker</span>
@@ -313,6 +320,30 @@
             <span class="project-badge">ESG risk</span>
             <span class="project-badge">Climate stress testing</span>
             <span class="project-badge">Regression with fixed effects</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/consumer-lending-underwriting-policy" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Consumer Lending Underwriting Policy: From Risk Model to Approval Decision</div>
+          <div class="project-desc">
+            Built an independent, interpretable credit risk model on close to 30 million LendingClub applications,
+            then turned it into a threshold-based approval policy and tested it on later loan vintages, never on the
+            years it trained on. Without ever seeing LendingClub's own risk grade, the model recovered their exact
+            grade ordering from A to G (Spearman 1.0). Tightening approval from 100 to 84 percent cut the portfolio
+            default rate from 21.5 to 17.1 percent under a stated profit-and-loss assumption. The final phase
+            confronts the selection-bias limitation directly: with no outcome data for rejected applicants, this is a
+            re-ordering-within-an-accepted-book result, not a lending-expansion claim, and I deliberately did not run
+            a reject-inference technique the data was too weak to support honestly.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">Credit underwriting policy</span>
+            <span class="project-badge">Reject inference</span>
+            <span class="project-badge">Calibration</span>
+            <span class="project-badge">Logistic regression</span>
             <span class="project-badge">Python</span>
           </div>
         </div>
