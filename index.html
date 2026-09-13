@@ -60,6 +60,9 @@
   .project-badge { font-family: var(--mono); font-size: 10.5px; padding: 2px 8px; border-radius: 4px; background: var(--teal-bg); color: var(--teal); }
   .project-arrow { color: var(--ink-3); font-size: 18px; margin-top: 2px; transition: transform 0.15s, color 0.15s; }
   .project-card:hover .project-arrow { transform: translate(2px, -2px); color: var(--teal); }
+  .project-deck-link { margin: -6px 0 12px 2px; font-size: 12px; }
+  .project-deck-link a { color: var(--teal); font-weight: 500; text-decoration: none; }
+  .project-deck-link a:hover { text-decoration: underline; }
   .timeline { position: relative; padding-left: 28px; }
   .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: var(--rule); }
   .timeline-item { position: relative; margin-bottom: 26px; }
@@ -257,6 +260,32 @@
   <div class="section">
     <div class="section-label">data projects</div>
     <div class="projects-list">
+
+      <a class="project-card" href="https://github.com/armotezakker/lending-strategy-business-case" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Consumer Lending Strategy: An Executive Business Case</div>
+          <div class="project-desc">
+            A strategy consulting-style business case built on a calibrated machine learning risk model: given a
+            $9.7B loan book losing money in the wrong places, where should a lender tighten, hold, or reprice, and
+            what is each option worth? The analysis finds the counterintuitive answer, a single well-placed risk
+            cutoff captures most of the available value because the risk score already prices in most of the segment
+            story, and the recommendation flips only if realized losses run 15 percent below the book's own average.
+            Delivered as a 12-slide executive deck with a clear recommendation and its trigger conditions, not just a
+            model.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">Business strategy</span>
+            <span class="project-badge">ML risk modelling</span>
+            <span class="project-badge">Scenario analysis</span>
+            <span class="project-badge">Executive communication</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+      <div class="project-deck-link">
+        <a href="https://github.com/armotezakker/lending-strategy-business-case/blob/main/reports/lending_strategy_deck.pptx" target="_blank" rel="noopener">View the executive deck (PPTX) ↗</a>
+      </div>
 
       <a class="project-card" href="https://github.com/armotezakker/equity-factor-model" target="_blank" rel="noopener">
         <div>
