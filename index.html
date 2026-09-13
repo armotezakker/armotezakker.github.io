@@ -30,12 +30,15 @@
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='300'%3E%3Cg%20stroke='%230d7a6e'%20stroke-width='0.6'%20opacity='0.35'%3E%3Cline%20x1='0'%20y1='0'%20x2='300'%20y2='0'/%3E%3Cline%20x1='0'%20y1='0'%20x2='0'%20y2='300'/%3E%3Cline%20x1='0'%20y1='75'%20x2='300'%20y2='75'/%3E%3Cline%20x1='75'%20y1='0'%20x2='75'%20y2='300'/%3E%3Cline%20x1='0'%20y1='150'%20x2='300'%20y2='150'/%3E%3Cline%20x1='150'%20y1='0'%20x2='150'%20y2='300'/%3E%3Cline%20x1='0'%20y1='225'%20x2='300'%20y2='225'/%3E%3Cline%20x1='225'%20y1='0'%20x2='225'%20y2='300'/%3E%3Cline%20x1='0'%20y1='300'%20x2='300'%20y2='300'/%3E%3Cline%20x1='300'%20y1='0'%20x2='300'%20y2='300'/%3E%3C/g%3E%3Cg%20font-family='monospace'%20font-size='12'%20fill='%230d7a6e'%20opacity='0.45'%3E%3Ctext%20x='10'%20y='20'%3E1%3C/text%3E%3Ctext%20x='90'%20y='40'%3E0%3C/text%3E%3Ctext%20x='170'%20y='18'%3E1%3C/text%3E%3Ctext%20x='250'%20y='50'%3E0%3C/text%3E%3Ctext%20x='35'%20y='100'%3E0%3C/text%3E%3Ctext%20x='120'%20y='120'%3E1%3C/text%3E%3Ctext%20x='200'%20y='95'%3E1%3C/text%3E%3Ctext%20x='270'%20y='135'%3E0%3C/text%3E%3Ctext%20x='15'%20y='180'%3E1%3C/text%3E%3Ctext%20x='100'%20y='210'%3E0%3C/text%3E%3Ctext%20x='185'%20y='190'%3E0%3C/text%3E%3Ctext%20x='260'%20y='225'%3E1%3C/text%3E%3Ctext%20x='45'%20y='260'%3E1%3C/text%3E%3Ctext%20x='130'%20y='285'%3E0%3C/text%3E%3Ctext%20x='210'%20y='265'%3E1%3C/text%3E%3Ctext%20x='280'%20y='290'%3E0%3C/text%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    opacity: 0.55;
     pointer-events: none;
     z-index: 0;
   }
-  @media (prefers-color-scheme: dark) { body::before { opacity: 0.08; } }
+  @media (prefers-color-scheme: dark) {
+    body::before { background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='300'%3E%3Cg%20stroke='%231aaa98'%20stroke-width='0.6'%20opacity='0.35'%3E%3Cline%20x1='0'%20y1='0'%20x2='300'%20y2='0'/%3E%3Cline%20x1='0'%20y1='0'%20x2='0'%20y2='300'/%3E%3Cline%20x1='0'%20y1='75'%20x2='300'%20y2='75'/%3E%3Cline%20x1='75'%20y1='0'%20x2='75'%20y2='300'/%3E%3Cline%20x1='0'%20y1='150'%20x2='300'%20y2='150'/%3E%3Cline%20x1='150'%20y1='0'%20x2='150'%20y2='300'/%3E%3Cline%20x1='0'%20y1='225'%20x2='300'%20y2='225'/%3E%3Cline%20x1='225'%20y1='0'%20x2='225'%20y2='300'/%3E%3Cline%20x1='0'%20y1='300'%20x2='300'%20y2='300'/%3E%3Cline%20x1='300'%20y1='0'%20x2='300'%20y2='300'/%3E%3C/g%3E%3Cg%20font-family='monospace'%20font-size='12'%20fill='%231aaa98'%20opacity='0.45'%3E%3Ctext%20x='10'%20y='20'%3E1%3C/text%3E%3Ctext%20x='90'%20y='40'%3E0%3C/text%3E%3Ctext%20x='170'%20y='18'%3E1%3C/text%3E%3Ctext%20x='250'%20y='50'%3E0%3C/text%3E%3Ctext%20x='35'%20y='100'%3E0%3C/text%3E%3Ctext%20x='120'%20y='120'%3E1%3C/text%3E%3Ctext%20x='200'%20y='95'%3E1%3C/text%3E%3Ctext%20x='270'%20y='135'%3E0%3C/text%3E%3Ctext%20x='15'%20y='180'%3E1%3C/text%3E%3Ctext%20x='100'%20y='210'%3E0%3C/text%3E%3Ctext%20x='185'%20y='190'%3E0%3C/text%3E%3Ctext%20x='260'%20y='225'%3E1%3C/text%3E%3Ctext%20x='45'%20y='260'%3E1%3C/text%3E%3Ctext%20x='130'%20y='285'%3E0%3C/text%3E%3Ctext%20x='210'%20y='265'%3E1%3C/text%3E%3Ctext%20x='280'%20y='290'%3E0%3C/text%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; }
+  }
   .page { position: relative; z-index: 1; }
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--teal); }
@@ -60,7 +63,7 @@
   .skill-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
   .skill-header:hover .skill-name { color: var(--teal); }
   .skill-name { font-size: 12.5px; font-weight: 600; color: var(--ink); }
-  .skill-chevron { flex-shrink: 0; color: var(--ink-3); font-size: 10px; transition: transform 0.2s ease, color 0.15s ease; }
+  .skill-chevron { flex-shrink: 0; color: var(--ink-3); transition: transform 0.2s ease, color 0.15s ease; }
   .skill-header:hover .skill-chevron { color: var(--teal); }
   .skill-card.expanded .skill-chevron { transform: rotate(180deg); }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; overflow: hidden; max-height: 0; opacity: 0; margin-top: 0; transition: max-height 0.25s ease, opacity 0.2s ease, margin-top 0.25s ease; }
@@ -162,7 +165,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">SQL</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag teal">BigQuery</span><span class="tag teal">DuckDB</span>
@@ -172,7 +175,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Python</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag teal">Pandas</span><span class="tag teal">Scikit-learn</span>
@@ -182,7 +185,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">NLP and ML</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">FinBERT</span><span class="tag blue">Transformers</span>
@@ -192,7 +195,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Visualisation</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag teal">Tableau</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
@@ -201,7 +204,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Statistics</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">A/B testing</span><span class="tag blue">Survival analysis</span>
@@ -211,7 +214,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Time Series and Anomaly Detection</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">STL/MSTL decomposition</span><span class="tag blue">Seasonality</span>
@@ -221,7 +224,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Quantitative Finance</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag teal">Markowitz optimization</span><span class="tag teal">Black-Scholes</span>
@@ -232,7 +235,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Credit Risk and Model Validation</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">PD scoring</span><span class="tag blue">IFRS9 / ECL</span>
@@ -242,7 +245,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Underwriting Policy and Selection Bias</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">Approval threshold simulation</span><span class="tag blue">Reject inference</span>
@@ -252,7 +255,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">ML Engineering and Deployment</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">FastAPI</span><span class="tag blue">Docker</span>
@@ -262,7 +265,7 @@
             <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Systematic Trading Research</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">Backtesting</span><span class="tag blue">Signal Research</span>
@@ -272,7 +275,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Cloud Data Warehousing</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">BigQuery</span><span class="tag blue">DuckDB</span>
@@ -282,7 +285,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Event Study Analysis</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">Market Model</span><span class="tag blue">Abnormal Returns</span>
@@ -292,7 +295,7 @@
             <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Price Elasticity and Revenue Optimization</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag blue">Elasticity Estimation</span><span class="tag blue">Fixed Effects</span>
@@ -302,7 +305,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Simulation</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag">LAMMPS</span><span class="tag">COMSOL</span><span class="tag">ANSYS Fluent</span>
@@ -311,7 +314,7 @@
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Languages</span>
-          <span class="skill-chevron">▾</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="skill-tags">
           <span class="tag teal">English</span>
