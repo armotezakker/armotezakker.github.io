@@ -25,7 +25,18 @@
       --accent: #4d8fd4; --accent-bg: #0d1e35;
     }
   }
-  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; position: relative; }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @media (prefers-color-scheme: dark) { body::before { opacity: 0.08; } }
+  .page { position: relative; z-index: 1; }
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--teal); }
   .page { max-width: 880px; margin: 0 auto; padding: 3rem 2rem 6rem; }
@@ -44,10 +55,16 @@
   .section { margin-bottom: 3rem; }
   .section-label { font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; align-items: start; }
   .skill-card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
-  .skill-name { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+  .skill-header:hover .skill-name { color: var(--teal); }
+  .skill-name { font-size: 12.5px; font-weight: 600; color: var(--ink); }
+  .skill-chevron { flex-shrink: 0; color: var(--ink-3); font-size: 10px; transition: transform 0.2s ease, color 0.15s ease; }
+  .skill-header:hover .skill-chevron { color: var(--teal); }
+  .skill-card.expanded .skill-chevron { transform: rotate(180deg); }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; overflow: hidden; max-height: 0; opacity: 0; margin-top: 0; transition: max-height 0.25s ease, opacity 0.2s ease, margin-top 0.25s ease; }
+  .skill-card.expanded .skill-tags { max-height: 160px; opacity: 1; margin-top: 10px; }
   .tag { font-family: var(--mono); font-size: 10.5px; padding: 2px 7px; border-radius: 4px; background: var(--bg); color: var(--ink-3); border: 1px solid var(--rule); }
   .tag.teal { background: var(--teal-bg); color: var(--teal); border-color: transparent; }
   .tag.blue { background: var(--accent-bg); color: var(--accent); border-color: transparent; }
@@ -143,48 +160,69 @@
     <div class="section-label">technical skills</div>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-name">SQL</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">SQL</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag teal">BigQuery</span><span class="tag teal">DuckDB</span>
           <span class="tag">CTEs</span><span class="tag">Window functions</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Python</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Python</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag teal">Pandas</span><span class="tag teal">Scikit-learn</span>
           <span class="tag">NumPy</span><span class="tag">Jupyter</span><span class="tag">Git</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">NLP and ML</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">NLP and ML</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">FinBERT</span><span class="tag blue">Transformers</span>
           <span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">PyTorch</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Visualisation</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Visualisation</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag teal">Tableau</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Statistics</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Statistics</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">A/B testing</span><span class="tag blue">Survival analysis</span>
           <span class="tag">Regression</span><span class="tag">Cohort analysis</span><span class="tag">Confidence intervals</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Time Series and Anomaly Detection</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Time Series and Anomaly Detection</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">STL/MSTL decomposition</span><span class="tag blue">Seasonality</span>
           <span class="tag">Robust scale estimation</span><span class="tag">Ablation testing</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Quantitative Finance</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Quantitative Finance</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag teal">Markowitz optimization</span><span class="tag teal">Black-Scholes</span>
           <span class="tag">Value at Risk</span><span class="tag">Merton-Vasicek credit risk</span>
@@ -192,62 +230,89 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Credit Risk and Model Validation</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Credit Risk and Model Validation</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">PD scoring</span><span class="tag blue">IFRS9 / ECL</span>
           <span class="tag">Gini / KS / PSI</span><span class="tag">Calibration</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Underwriting Policy and Selection Bias</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Underwriting Policy and Selection Bias</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">Approval threshold simulation</span><span class="tag blue">Reject inference</span>
           <span class="tag">Profit/loss tradeoff</span><span class="tag">Probability calibration</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">ML Engineering and Deployment</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">ML Engineering and Deployment</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">FastAPI</span><span class="tag blue">Docker</span>
           <span class="tag">MLflow</span><span class="tag">SHAP + LLM explainability</span>
         </div>
       </div>
             <div class="skill-card">
-        <div class="skill-name">Systematic Trading Research</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Systematic Trading Research</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">Backtesting</span><span class="tag blue">Signal Research</span>
           <span class="tag">Block Bootstrap</span><span class="tag">Statistical Validation</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Cloud Data Warehousing</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Cloud Data Warehousing</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">BigQuery</span><span class="tag blue">DuckDB</span>
           <span class="tag">Cost-Aware SQL</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Event Study Analysis</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Event Study Analysis</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">Market Model</span><span class="tag blue">Abnormal Returns</span>
           <span class="tag">Multiple Testing Correction</span>
         </div>
       </div>
             <div class="skill-card">
-        <div class="skill-name">Price Elasticity and Revenue Optimization</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Price Elasticity and Revenue Optimization</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag blue">Elasticity Estimation</span><span class="tag blue">Fixed Effects</span>
           <span class="tag">Revenue Optimization</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Simulation</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Simulation</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag">LAMMPS</span><span class="tag">COMSOL</span><span class="tag">ANSYS Fluent</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-name">Languages</div>
+        <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Languages</span>
+          <span class="skill-chevron">▾</span>
+        </button>
         <div class="skill-tags">
           <span class="tag teal">English</span>
           <span class="tag teal">Swedish (learning)</span>
@@ -773,5 +838,14 @@
   <div class="footer">PhD · Engineering Mechanics · KTH Royal Institute of Technology · Stockholm, Sweden</div>
 
 </div>
+<script>
+  document.querySelectorAll('.skill-header').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.skill-card');
+      var expanded = card.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
+  });
+</script>
 </body>
 </html>
