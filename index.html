@@ -28,7 +28,7 @@
   body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; position: relative; }
   .page { position: relative; z-index: 1; }
   .binary-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 7px; margin-top: 1.75rem; user-select: none; }
-  .binary-digit { font-family: var(--mono); font-size: 13.5px; color: var(--teal); opacity: 1; transition: opacity 0.22s ease, filter 0.22s ease; }
+  .binary-digit { font-family: var(--mono); font-size: 13.5px; color: var(--teal); opacity: 1; transition: opacity 0.35s ease, filter 0.35s ease; }
   @media (prefers-reduced-motion: no-preference) { .binary-digit.flip { opacity: 0.1; filter: blur(1.5px); } }
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--teal); }
@@ -857,13 +857,13 @@
     if (reduceMotion) return;
 
     function scheduleFlip(span) {
-      var delay = 250 + Math.random() * 1000;
+      var delay = 900 + Math.random() * 2600;
       setTimeout(function () {
         span.classList.add('flip');
         setTimeout(function () {
           span.textContent = span.textContent === '0' ? '1' : '0';
           span.classList.remove('flip');
-        }, 220);
+        }, 350);
         scheduleFlip(span);
       }, delay);
     }
