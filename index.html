@@ -27,12 +27,9 @@
   }
   body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; position: relative; }
   .page { position: relative; z-index: 1; }
-  .matrix-layer { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-  .matrix-digit { position: absolute; font-family: var(--mono); color: var(--teal); opacity: 0.16; will-change: opacity; }
-  @media (prefers-reduced-motion: no-preference) {
-    .matrix-digit { opacity: 0; animation-name: matrixFlicker; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
-  }
-  @keyframes matrixFlicker { 0%, 100% { opacity: 0; } 50% { opacity: 0.55; } }
+  .binary-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 7px; margin-top: 1.75rem; user-select: none; }
+  .binary-digit { font-family: var(--mono); font-size: 13.5px; color: var(--teal); opacity: 1; transition: opacity 0.22s ease, filter 0.22s ease; }
+  @media (prefers-reduced-motion: no-preference) { .binary-digit.flip { opacity: 0.1; filter: blur(1.5px); } }
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--teal); }
   .page { max-width: 880px; margin: 0 auto; padding: 3rem 2rem 6rem; }
@@ -111,7 +108,6 @@
 </style>
 </head>
 <body>
-<div class="matrix-layer" aria-hidden="true" id="matrixLayer"></div>
 <div class="page">
 
   <div class="hero">
@@ -151,6 +147,7 @@
         </span>
       </div>
     </div>
+    <div class="binary-row" id="binaryRow" aria-hidden="true"></div>
   </div>
 
   <div class="section">
@@ -845,21 +842,32 @@
   });
 
   (function () {
-    var layer = document.getElementById('matrixLayer');
-    if (!layer) return;
-    var count = 32;
+    var row = document.getElementById('binaryRow');
+    if (!row) return;
+    var count = 64;
+    var spans = [];
     for (var i = 0; i < count; i++) {
       var span = document.createElement('span');
-      span.className = 'matrix-digit';
+      span.className = 'binary-digit';
       span.textContent = Math.random() < 0.5 ? '0' : '1';
-      span.style.left = (Math.random() * 100).toFixed(2) + '%';
-      span.style.top = (Math.random() * 100).toFixed(2) + '%';
-      span.style.fontSize = (10 + Math.random() * 7).toFixed(1) + 'px';
-      var duration = (2.5 + Math.random() * 5).toFixed(2);
-      span.style.animationDuration = duration + 's';
-      span.style.animationDelay = (-Math.random() * duration).toFixed(2) + 's';
-      layer.appendChild(span);
+      row.appendChild(span);
+      spans.push(span);
     }
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    function scheduleFlip(span) {
+      var delay = 250 + Math.random() * 1000;
+      setTimeout(function () {
+        span.classList.add('flip');
+        setTimeout(function () {
+          span.textContent = span.textContent === '0' ? '1' : '0';
+          span.classList.remove('flip');
+        }, 220);
+        scheduleFlip(span);
+      }, delay);
+    }
+    spans.forEach(scheduleFlip);
   })();
 </script>
 </body>
