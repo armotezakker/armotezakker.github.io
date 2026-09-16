@@ -880,6 +880,22 @@
   <div class="footer">PhD · Engineering Mechanics · KTH Royal Institute of Technology · Stockholm, Sweden</div>
 
 </div>
+
+<style>
+  /* Subtle corner accent: small squares fading in and out, same color and
+     pacing as the header's binary-digit flip effect (var(--teal), 0.35s
+     ease transition, randomized 900-3500ms gap between pulses). */
+  /* Width is capped at the page's own actual blank margin (auto-centering
+     margin plus its 2rem padding), computed live from viewport width, so
+     the squares can never land on top of the content column regardless of
+     screen size, rather than guessing fixed breakpoints. */
+  .corner-accent { position: fixed; top: 0; width: min(320px, max(24px, calc((100vw - 880px) / 2 + 32px))); height: 260px; pointer-events: none; z-index: 0; overflow: hidden; }
+  .corner-accent.left { left: 0; }
+  .corner-accent.right { right: 0; }
+  .corner-square { position: absolute; background: var(--teal); box-shadow: 0 0 6px var(--teal); border-radius: 1px; opacity: 0; transition: opacity 0.35s ease; }
+</style>
+<div class="corner-accent left" id="cornerAccentLeft" aria-hidden="true"></div>
+<div class="corner-accent right" id="cornerAccentRight" aria-hidden="true"></div>
 <script>
   document.querySelectorAll('.skill-header').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -916,6 +932,41 @@
       }, delay);
     }
     spans.forEach(scheduleFlip);
+  })();
+</script>
+<script>
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+    var containers = [document.getElementById('cornerAccentLeft'), document.getElementById('cornerAccentRight')];
+    containers.forEach(function (container) {
+      if (!container) return;
+      var count = 12 + Math.floor(Math.random() * 6);
+      for (var i = 0; i < count; i++) {
+        var sq = document.createElement('div');
+        sq.className = 'corner-square';
+        container.appendChild(sq);
+        pulse(sq, container);
+      }
+    });
+
+    function pulse(sq, container) {
+      var size = 6 + Math.random() * 8;
+      var maxX = Math.max(container.clientWidth - size, 0);
+      var maxY = Math.max(container.clientHeight - size, 0);
+      sq.style.width = size + 'px';
+      sq.style.height = size + 'px';
+      sq.style.left = (Math.random() * maxX) + 'px';
+      sq.style.top = (Math.random() * maxY) + 'px';
+      var peak = 0.35 + Math.random() * 0.35;
+      requestAnimationFrame(function () { sq.style.opacity = String(peak); });
+      var hold = 350 + Math.random() * 550;
+      setTimeout(function () {
+        sq.style.opacity = '0';
+        var gap = 900 + Math.random() * 2600;
+        setTimeout(function () { pulse(sq, container); }, gap);
+      }, 350 + hold);
+    }
   })();
 </script>
 </body>
