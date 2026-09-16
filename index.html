@@ -185,6 +185,16 @@
       </div>
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">NLP and Deep Learning</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="skill-tags">
+          <span class="tag blue">Transformer fine-tuning</span><span class="tag blue">FinBERT</span>
+          <span class="tag">Point-in-time feature discipline</span><span class="tag">Confound analysis</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Visualisation</span>
           <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
@@ -346,6 +356,31 @@
       <div class="project-deck-link">
         <a href="https://github.com/armotezakker/lending-strategy-business-case/blob/main/reports/lending_strategy_deck.pptx" target="_blank" rel="noopener">View the executive deck (PPTX) ↗</a>
       </div>
+
+      <a class="project-card" href="https://github.com/armotezakker/financial-text-signal" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Does the Wording of a Corporate Filing Predict a Stock Move?</div>
+          <div class="project-desc">
+            Every material corporate event, a CEO change, an earnings surprise, a new contract, triggers a filing
+            within days. This project fine-tunes a transformer on 12,000+ of these filings to test whether the
+            language itself carries signal, benchmarked honestly against a simple finance-specific word-count
+            baseline. The wording does not predict which way a stock moves (the fine-tuned model ties a naive
+            guess), but it does predict how much it moves, beating the word-count baseline by a wide margin, with
+            the advantage concentrated exactly in filing types where simple word-counting has nothing to grab onto.
+            The apparent trading edge looked strong until a check found most of the riskiest-looking filings were
+            earnings announcements, already expected to be volatile. After removing that overlap, a smaller but
+            real edge remained. Reported honestly rather than oversold either way.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">FinBERT fine-tuning</span>
+            <span class="project-badge">Point-in-time discipline</span>
+            <span class="project-badge">Confound analysis</span>
+            <span class="project-badge">NLP</span>
+            <span class="project-badge">PyTorch</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
 
       <a class="project-card" href="https://github.com/armotezakker/equity-factor-model" target="_blank" rel="noopener">
         <div>
