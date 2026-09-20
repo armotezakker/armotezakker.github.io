@@ -195,6 +195,16 @@
       </div>
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">AI Verification and Trustworthy AI</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="skill-tags">
+          <span class="tag blue">LLM faithfulness evaluation</span><span class="tag blue">Hallucination detection</span>
+          <span class="tag">Deterministic + semantic verification</span><span class="tag">Failure mode analysis</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Visualisation</span>
           <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
@@ -377,6 +387,31 @@
             <span class="project-badge">Confound analysis</span>
             <span class="project-badge">NLP</span>
             <span class="project-badge">PyTorch</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/verified-anomaly-reports" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">When an AI Incident Report Gets the Right Numbers and the Wrong River</div>
+          <div class="project-desc">
+            An anomaly detector flags unusual readings in real USGS river sensor data, including the real Hurricane
+            Helene flood and the real Guadalupe River flood, an LLM writes a short incident report from exactly
+            those readings, and a semantic faithfulness checker verifies the report against the data it should be
+            based on. The checker catches nearly every kind of fabricated claim, a false cause, a false historical
+            comparison, a drifted number, but has one real blind spot: swap the correct river's name for a
+            different, real, nearby river, leave every number untouched, and it can miss the swap entirely. A
+            five-line deterministic check, no AI involved, closes the gap completely. Stress-testing that fix then
+            found its own honest limits, reported rather than hidden, because a trustworthy AI pipeline needs both
+            kinds of check, and each one's failure modes need to be known, not assumed away.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">LLM faithfulness evaluation</span>
+            <span class="project-badge">Hallucination detection</span>
+            <span class="project-badge">Anomaly detection</span>
+            <span class="project-badge">Real sensor data</span>
+            <span class="project-badge">Python</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
