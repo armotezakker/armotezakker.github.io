@@ -325,6 +325,16 @@
       </div>
       <div class="skill-card">
         <button type="button" class="skill-header" aria-expanded="false">
+          <span class="skill-name">Stochastic Process Modeling</span>
+          <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="skill-tags">
+          <span class="tag blue">Anomalous diffusion</span><span class="tag blue">Fractional Brownian motion</span>
+          <span class="tag">Continuous-time random walk</span><span class="tag">MSD scaling analysis</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <button type="button" class="skill-header" aria-expanded="false">
           <span class="skill-name">Languages</span>
           <svg class="skill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
@@ -778,6 +788,31 @@
           <div class="project-stack">
             <span class="project-badge">Random Forest</span><span class="project-badge">Funnel analysis</span>
             <span class="project-badge">Tableau</span><span class="project-badge">Scikit-learn</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/armotezakker/anomalous-diffusion-detection" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Detecting Changes in Anomalous Diffusion: A Physics Project</div>
+          <div class="project-desc">
+            Grounded in my PhD work on nanoparticle diffusion in polymer networks. Builds synthetic particle
+            trajectories under normal, subdiffusive, and superdiffusive motion (verified against their own physics
+            before use), then compares three methods for detecting exactly when a particle's motion changes
+            character. A classical method's weakness on trapped-particle motion is traced to a named physical
+            effect, weak ergodicity breaking, not just observed as a low score. Two independent machine learning
+            methods, using completely different information from each other, both correct that exact weakness,
+            confirmed causally with a feature ablation rather than assumed from correlation. A raw-sequence model
+            ties the feature-engineered one on every outcome but leaves the underlying mechanism honestly
+            unresolved, reported as such.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">Anomalous diffusion</span>
+            <span class="project-badge">Stochastic simulation</span>
+            <span class="project-badge">Changepoint detection</span>
+            <span class="project-badge">XGBoost + CNN</span>
+            <span class="project-badge">Python</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
