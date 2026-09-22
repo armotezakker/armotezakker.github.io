@@ -818,6 +818,31 @@
         <div class="project-arrow">↗</div>
       </a>
 
+      <a class="project-card" href="https://github.com/armotezakker/scientific-rag-evaluation" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">Scientific RAG Evaluation: A Paper Q&amp;A System That Tests Itself Honestly</div>
+          <div class="project-desc">
+            Builds a retrieval-augmented question-answering system over five real machine learning papers
+            (Attention, BERT, GPT-3, RAG, InstructGPT), then evaluates it against a hand-verified 34-question
+            gold set and a hand-verified 14-question adversarial set, both checked against the source chunks
+            rather than generated and trusted. Retrieval, not the language model, turns out to be the real
+            bottleneck: answer accuracy is 84 percent when the correct passage is retrieved versus 27 percent
+            when it isn't. On the adversarial set the system correctly refuses 92.9 percent of unanswerable and
+            false-premise questions, and the one failure is traced precisely: it answers a question about one
+            paper using content retrieved entirely from a different paper, without checking that the source
+            actually matched what was asked.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">RAG evaluation</span>
+            <span class="project-badge">Retrieval diagnostics</span>
+            <span class="project-badge">Local LLM (Ollama)</span>
+            <span class="project-badge">Hallucination detection</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
     </div>
   </div>
 
