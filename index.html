@@ -381,6 +381,31 @@
     <div class="section-label">scientific machine learning and simulation</div>
     <div class="projects-list">
 
+      <a class="project-card" href="https://github.com/armotezakker/condensate-graph" target="_blank" rel="noopener">
+        <div>
+          <div class="project-name">condensate-graph: Network Analysis of Protein-RNA Condensates</div>
+          <div class="project-desc">
+            An open-source Python package that turns any coarse-grained condensate trajectory (CALVADOS, HPS,
+            Mpipi, LAMMPS and others) into chain-level contact networks. It measures RNA valency and bridging,
+            including whether a bridge links proteins that do not already touch and how long it lasts, builds
+            four kinds of chain graph, finds hub chains, and tests true periodic percolation from the image
+            shifts of every contact. It refuses to run without a periodic box, because contacts across the box
+            edge are otherwise lost without warning. Validated against published data: on 28 condensate
+            networks from another lab it reproduces the published edge counts exactly and the small-world
+            omega to within 0.001, and on a published multiphase droplet trajectory it reproduces the
+            published density profiles exactly.
+          </div>
+          <div class="project-stack">
+            <span class="project-badge">Biomolecular condensates</span>
+            <span class="project-badge">Periodic percolation</span>
+            <span class="project-badge">Network analysis</span>
+            <span class="project-badge">MDAnalysis + NetworkX</span>
+            <span class="project-badge">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
       <a class="project-card" href="https://github.com/armotezakker/nanoparticle-diffusion" target="_blank" rel="noopener">
         <div>
           <div class="project-name">Nanoparticle Diffusion in Polymer Networks: Langevin Dynamics and Regime Classification</div>
@@ -428,8 +453,6 @@
         </div>
         <div class="project-arrow">↗</div>
       </a>
-
-      <div class="project-deck-link" style="margin: 0 0 0 2px; color: var(--ink-3);">condensate-graph (coming soon)</div>
 
     </div>
   </div>
